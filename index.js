@@ -26,4 +26,4 @@ bot.on('message', function(message){
   Lion.parse(message)
 })
 
-bot.login('NDMyOTAzMDE3Mjk4Mzk1MTQ3.Da0Gaw.z2mFMs2xjdeeHohFlH8n3HJx3W0')
+bot.login('put token')
