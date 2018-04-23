@@ -1,0 +1,18 @@
+[
+    {
+        "tchat": "!help",
+        "response": "i'm going to help you ^_^ \n !aurelien : aurelien \n !google {recherche} : recherche google du mot clé à remplacer {recherche} \n !lion : gif jeter un lion \n !ping : renvoie pong"
+    },
+    {
+        "tchat": "!aurelien",
+        "response": "Aurélien comme la profession \n http://static8.viadeo-static.com/IyNpDWJ3KzM9okUC4kfnXdnGO1A=/300x300/member/0028evlfkk443o5?ts=1464270346000"
+    },
+    {
+        "tchat": "!lion",
+        "response": "https://media.giphy.com/media/DvMHwFYLVHlZe/giphy.gif"
+    },
+    {
+        "tchat": "!ping",
+        "response": "pong"
+    }
+]

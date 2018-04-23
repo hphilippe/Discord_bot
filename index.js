@@ -1,10 +1,9 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client()
 const Google = require('./commands/google')
-const Ping = require('./commands/ping')
 const Play = require('./commands/play')
-const Aurelien = require('./commands/aurelien')
-const Lion = require('./commands/lion')
+const Message = require('./commands/message')
+const Key = require('./config/config.json')
 
 bot.on('ready', function(){
   bot.user.setAvatar('./avatar.jpg').catch(console.error)
@@ -21,9 +20,7 @@ bot.on('message', function(message){
   let commandUsed =
   Google.parse(message) ||
   Play.parse(message) ||
-  Ping.parse(message) ||
-  Aurelien.parse(message) ||
-  Lion.parse(message)
+  Message.parse(message)
 })
 
-bot.login('NDMyOTAzMDE3Mjk4Mzk1MTQ3.Da0Gaw.z2mFMs2xjdeeHohFlH8n3HJx3W0')
+bot.login(Key.key)

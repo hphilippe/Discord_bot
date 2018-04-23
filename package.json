@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon --watch config",
+    "start-only-index": "node index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.3.2",
     "node-opus": "^0.2.7",
+    "nodemon": "^1.17.3",
     "ytdl-core": "^0.20.2"
   }
 }
