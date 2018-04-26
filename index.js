@@ -19,7 +19,7 @@ bot.on('ready', function(){
 bot.on('message', function(message){
   let commandUsed =
   Google.parse(message) ||
-  Play.parse(message) ||
+  // Play.parse(message) ||
   Message.parse(message)
 })
 

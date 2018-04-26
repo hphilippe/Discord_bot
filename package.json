@@ -12,8 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.3.2",
+    "google-spreadsheet": "^2.0.4",
     "node-opus": "^0.2.7",
     "nodemon": "^1.17.3",
     "ytdl-core": "^0.20.2"
-  }
+  },
+  "devDependencies": {}
 }
