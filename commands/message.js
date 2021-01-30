@@ -23,9 +23,11 @@ module.exports = class Message extends Command {
           sheet.push(obj3);
         });
 
+        var motFind = false;
         for(var item in sheet){
-          if(message == sheet[item].tchat){
+          if(message == sheet[item].tchat && !motFind){
             message.channel.send(sheet[item].response);
+            motFind = true;
           }
         }
 
