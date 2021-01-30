@@ -24,3 +24,5 @@ bot.on('message', function(message){
 })
 
 bot.login(Key.key)
+
+console.log("ʕ； •`ᴥ•´ʔ Skear Bot is Running!  ʕ￫ᴥ￩　ʔ")
