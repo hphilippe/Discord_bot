@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.3.2",
+    "erlpack": "github:discordapp/erlpack",
     "google-spreadsheet": "^2.0.4",
     "node-opus": "^0.2.7",
     "nodemon": "^1.17.3",

@@ -7,7 +7,7 @@ const Key = require('./config/config.json')
 
 bot.on('ready', function(){
   bot.user.setAvatar('./avatar.jpg').catch(console.error)
-  bot.user.setActivity('R6 God Player').catch(console.error)
+  bot.user.setActivity('Snowy').catch(console.error)
 })
 
 // bot.on('guildMemberAdd', function(member){
