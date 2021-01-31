@@ -28,6 +28,7 @@ module.exports = class Message extends Command {
           if(message == sheet[item].tchat && !motFind){
             message.channel.send(sheet[item].response);
             motFind = true;
+            break;
           }
         }
 
