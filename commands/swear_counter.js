@@ -13,6 +13,39 @@ module.exports = class SwearCounter extends Command {
     static match(message) {
 
         const words = message.content.split(' ');
+        
+        if(words[0] == "!SwearStatus")
+        {
+            doc.useServiceAccountAuth(creds, function () {
+
+                // Get Infos from GoogleSpreadSheet doc
+                doc.getInfo(function (err, info) {
+                    sheet = info.worksheets[1];
+
+                    // Get Rows from sheet
+                    doc.getRows(2, function (err, rows) {
+                        var res = "**Oyé! Oyé! Les ardoises de chacun:**\n";
+                        if (rows) {
+                            rows.forEach(function (element) {
+        
+                                var obj1 = element.name;
+                                var obj2 = element.counter;
+                                var obj3 = {
+                                    "name": obj1,
+                                    "counter": obj2
+                                };
+        
+                                res += "**" + obj3.name + "**" + ": " + parseInt(obj3.counter)/100  + "€\n";
+                            });
+                        }
+                        message.channel.send(res);
+                    });
+        
+                });
+            });
+            return;
+        }
+
         if (!(words.length == 2 || words.length == 3) || !words[0].startsWith('!'))
             return;
 
