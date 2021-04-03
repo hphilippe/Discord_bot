@@ -3,6 +3,7 @@ const bot = new Discord.Client()
 const Google = require('./commands/google')
 const Play = require('./commands/play')
 const Message = require('./commands/message')
+const SwearCounter = require('./commands/swear_counter')
 const Key = require('./config/config.json')
 
 bot.on('ready', function(){
@@ -20,7 +21,8 @@ bot.on('message', function(message){
   let commandUsed =
   Google.parse(message) ||
   //Play.parse(message) ||
-  Message.parse(message)
+  Message.parse(message) || 
+  SwearCounter.parse(message)
 })
 
 bot.login(Key.key)
