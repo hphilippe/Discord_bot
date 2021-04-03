@@ -6,7 +6,6 @@ var async = require('async');
 // spreadsheet key is the long id in the sheets URL
 var doc = new GoogleSpreadsheet('1bdPCnBVuTTkclDN_up2YzYfL0Yq8uBRqasGSkd9veCo');
 var creds = require('./../config/google-generated-creds.json');
-var sheetTable = [];
 var sheet;
 
 module.exports = class SwearCounter extends Command {
@@ -14,8 +13,10 @@ module.exports = class SwearCounter extends Command {
     static match(message) {
 
         const words = message.content.split(' ');
-        if (words.length != 2 || !words[0].startsWith('!'))
+        if (!(words.length == 2 || words.length == 3) || !words[0].startsWith('!'))
             return;
+
+        var doTts = words.length == 3 && words[2] == "tts"; 
 
         if(isNaN(parseInt(words[1])))
         {
@@ -34,6 +35,8 @@ module.exports = class SwearCounter extends Command {
 
                 // Get Rows from sheet
                 doc.getRows(2, function (err, rows) {
+
+                    var sheetTable = [];
                     if (rows) {
                         rows.forEach(function (element) {
 
@@ -53,7 +56,6 @@ module.exports = class SwearCounter extends Command {
                                 motFind = true;
 
                                 if (motFind) {
-                                    console.log(indexLine);
                                     sheet.getCells(
                                         {
                                             'min-row': indexLine,
@@ -70,7 +72,7 @@ module.exports = class SwearCounter extends Command {
 
                                             message.channel.send(
                                                 "Attention " + name.value + ", tu dois deja: " + parseInt(val.value)/100 + "€",
-                                            { tts: true });
+                                            { tts: doTts });
                                         }
                                     );
                                 }
